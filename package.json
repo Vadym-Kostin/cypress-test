@@ -31,8 +31,8 @@
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
     "cypress:run": "npm run delete:artifacts && npx cypress run --spec cypress/e2e/* --browser chrome && npm run generate:report",
     "generate:report": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json",
-    "delete:reports": "rimraf -r cypress/results/* || true",
-    "delete:merged": "rimraf mochawesome.json",
+    "delete:reports": "rimraf cypress/results/* || true",
+    "delete:merged": "rimraf mochawesome.json || true",
     "delete:artifacts": "npm run delete:reports && npm run delete:merged",
     "cypress:e2e": "start-test start http-get://localhost:4200/ cypress:run"
   },
