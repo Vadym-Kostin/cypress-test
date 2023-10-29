@@ -1,15 +1,14 @@
 name: Test Workflow
-
 on:
   workflow_dispatch:
-    push:
-      branches:
-      - master
+  push:
+    branches:
+    - master
 
 env:
   RECORD_KEY: ${{ secrets.RECORD_KEY }}
 
-job:
+jobs:
   testing1:
     runs-on: ubuntu-latest
     container:
